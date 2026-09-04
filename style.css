@@ -1,0 +1,448 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    min-height: 100vh;
+    font-family: Arial, sans-serif;
+    color: white;
+    overflow-x: hidden;
+
+    background: linear-gradient(
+        -45deg,
+        #0f172a,
+        #1d4ed8,
+        #0284c7,
+        #0f766e
+    );
+
+    background-size: 400% 400%;
+    animation: backgroundMove 12s ease infinite;
+}
+
+/* Background animation */
+
+@keyframes backgroundMove {
+    0% {
+        background-position: 0% 50%;
+    }
+
+    50% {
+        background-position: 100% 50%;
+    }
+
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
+
+/* Sky */
+
+.sky {
+    position: fixed;
+    inset: 0;
+    overflow: hidden;
+    pointer-events: none;
+    z-index: -1;
+}
+
+
+/* Clouds */
+
+.cloud {
+    position: absolute;
+    font-size: 80px;
+    opacity: 0.35;
+    animation: cloudMove 20s linear infinite;
+}
+
+.cloud1 {
+    top: 12%;
+    left: -150px;
+}
+
+.cloud2 {
+    top: 35%;
+    left: -200px;
+    font-size: 60px;
+    animation-duration: 25s;
+    animation-delay: 5s;
+}
+
+.cloud3 {
+    top: 65%;
+    left: -180px;
+    font-size: 100px;
+    animation-duration: 30s;
+    animation-delay: 2s;
+}
+
+@keyframes cloudMove {
+    from {
+        transform: translateX(-200px);
+    }
+
+    to {
+        transform: translateX(120vw);
+    }
+}
+
+
+/* Stars */
+
+.star {
+    position: absolute;
+    font-size: 25px;
+    opacity: 0.7;
+    animation: twinkle 2s infinite alternate;
+}
+
+.star1 {
+    top: 15%;
+    left: 20%;
+}
+
+.star2 {
+    top: 25%;
+    right: 20%;
+    animation-delay: 0.5s;
+}
+
+.star3 {
+    top: 60%;
+    left: 10%;
+    animation-delay: 1s;
+}
+
+.star4 {
+    top: 75%;
+    right: 15%;
+    animation-delay: 1.5s;
+}
+
+@keyframes twinkle {
+    from {
+        opacity: 0.2;
+        transform: scale(0.8);
+    }
+
+    to {
+        opacity: 1;
+        transform: scale(1.3);
+    }
+}
+
+
+/* Header */
+
+header {
+    text-align: center;
+    padding: 45px 20px 20px;
+
+    animation: slideDown 1s ease;
+}
+
+header h1 {
+    font-size: 42px;
+    margin-bottom: 10px;
+    text-shadow: 0 5px 20px rgba(0,0,0,0.3);
+}
+
+header p {
+    font-size: 18px;
+    opacity: 0.9;
+}
+
+@keyframes slideDown {
+    from {
+        opacity: 0;
+        transform: translateY(-40px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+
+/* Main */
+
+main {
+    width: 90%;
+    max-width: 850px;
+    margin: 30px auto;
+}
+
+
+/* Search */
+
+.search-box {
+    display: flex;
+    gap: 12px;
+
+    padding: 20px;
+
+    background: rgba(255,255,255,0.15);
+
+    backdrop-filter: blur(15px);
+
+    border: 1px solid rgba(255,255,255,0.25);
+
+    border-radius: 20px;
+
+    box-shadow: 0 15px 40px rgba(0,0,0,0.25);
+
+    animation: fadeUp 1s ease;
+}
+
+.search-box input {
+    flex: 1;
+
+    padding: 15px;
+
+    border: none;
+    outline: none;
+
+    border-radius: 12px;
+
+    font-size: 16px;
+}
+
+.search-box button {
+    padding: 15px 25px;
+
+    border: none;
+
+    border-radius: 12px;
+
+    background: #0284c7;
+
+    color: white;
+
+    font-size: 16px;
+
+    font-weight: bold;
+
+    cursor: pointer;
+
+    transition: 0.3s;
+}
+
+.search-box button:hover {
+    transform: translateY(-4px) scale(1.03);
+    background: #0369a1;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.3);
+}
+
+
+/* Message */
+
+#message {
+    text-align: center;
+    margin: 20px;
+
+    min-height: 25px;
+
+    font-weight: bold;
+}
+
+
+/* Weather Card */
+
+.weather-card {
+    text-align: center;
+
+    padding: 35px;
+
+    margin-top: 20px;
+
+    background: rgba(255,255,255,0.16);
+
+    backdrop-filter: blur(18px);
+
+    border: 1px solid rgba(255,255,255,0.3);
+
+    border-radius: 25px;
+
+    box-shadow: 0 20px 50px rgba(0,0,0,0.3);
+
+    animation: cardAppear 1s ease;
+}
+
+@keyframes cardAppear {
+    from {
+        opacity: 0;
+        transform: scale(0.8) translateY(40px);
+    }
+
+    to {
+        opacity: 1;
+        transform: scale(1) translateY(0);
+    }
+}
+
+
+/* Weather Icon */
+
+.weather-icon {
+    font-size: 80px;
+
+    animation: iconFloat 3s ease-in-out infinite;
+}
+
+@keyframes iconFloat {
+    0%, 100% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-12px);
+    }
+}
+
+
+/* City */
+
+.weather-card h2 {
+    font-size: 35px;
+    margin: 10px;
+}
+
+#description {
+    font-size: 18px;
+    margin-bottom: 15px;
+}
+
+
+/* Temperature */
+
+.temperature {
+    font-size: 65px;
+    font-weight: bold;
+
+    margin: 15px;
+
+    text-shadow: 0 5px 20px rgba(0,0,0,0.3);
+}
+
+
+/* Details */
+
+.details {
+    display: grid;
+
+    grid-template-columns: repeat(3, 1fr);
+
+    gap: 20px;
+
+    margin-top: 25px;
+}
+
+.detail {
+    padding: 22px;
+
+    border-radius: 18px;
+
+    background: rgba(255,255,255,0.15);
+
+    transition: 0.3s;
+
+    animation: floatingCard 3s ease-in-out infinite;
+}
+
+.detail:nth-child(2) {
+    animation-delay: 0.4s;
+}
+
+.detail:nth-child(3) {
+    animation-delay: 0.8s;
+}
+
+.detail:hover {
+    transform: translateY(-8px);
+
+    background: rgba(255,255,255,0.25);
+}
+
+.detail .icon {
+    font-size: 35px;
+    margin-bottom: 10px;
+}
+
+.detail h3 {
+    font-size: 16px;
+    margin-bottom: 10px;
+}
+
+.detail p {
+    font-size: 22px;
+    font-weight: bold;
+}
+
+@keyframes floatingCard {
+    0%, 100% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-6px);
+    }
+}
+
+
+/* Footer */
+
+footer {
+    text-align: center;
+
+    padding: 25px;
+
+    margin-top: 40px;
+
+    background: rgba(0,0,0,0.15);
+
+    font-size: 14px;
+}
+
+
+/* Loading */
+
+.loading {
+    animation: loading 1s infinite;
+}
+
+@keyframes loading {
+    50% {
+        opacity: 0.3;
+    }
+}
+
+
+/* Responsive */
+
+@media (max-width: 650px) {
+
+    header h1 {
+        font-size: 30px;
+    }
+
+    .search-box {
+        flex-direction: column;
+    }
+
+    .search-box button {
+        width: 100%;
+    }
+
+    .details {
+        grid-template-columns: 1fr;
+    }
+
+    .temperature {
+        font-size: 50px;
+    }
+}

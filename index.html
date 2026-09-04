@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Weather Dashboard</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <!-- Animated Background -->
+    <div class="sky">
+        <div class="cloud cloud1">☁️</div>
+        <div class="cloud cloud2">☁️</div>
+        <div class="cloud cloud3">☁️</div>
+
+        <div class="star star1">✦</div>
+        <div class="star star2">✦</div>
+        <div class="star star3">✦</div>
+        <div class="star star4">✦</div>
+    </div>
+
+    <header>
+        <h1>🌤️ Weather Dashboard</h1>
+        <p>Real-Time Weather Information</p>
+    </header>
+
+    <main>
+
+        <section class="search-box">
+
+            <input
+                type="text"
+                id="city"
+                placeholder="Enter city name..."
+                autocomplete="off"
+            >
+
+            <button id="searchBtn">
+                🔍 Search
+            </button>
+
+        </section>
+
+        <p id="message"></p>
+
+        <section id="weatherCard" class="weather-card">
+
+            <div class="weather-icon" id="weatherIcon">
+                🌤️
+            </div>
+
+            <h2 id="cityName">Search a City</h2>
+
+            <p id="description">
+                Enter a city to see weather
+            </p>
+
+            <div class="temperature">
+                <span id="temperature">--</span>°C
+            </div>
+
+            <div class="details">
+
+                <div class="detail">
+                    <div class="icon">💧</div>
+                    <h3>Humidity</h3>
+                    <p id="humidity">--%</p>
+                </div>
+
+                <div class="detail">
+                    <div class="icon">💨</div>
+                    <h3>Wind Speed</h3>
+                    <p id="windSpeed">-- km/h</p>
+                </div>
+
+                <div class="detail">
+                    <div class="icon">🌡️</div>
+                    <h3>Weather</h3>
+                    <p id="weatherStatus">--</p>
+                </div>
+
+            </div>
+
+        </section>
+
+    </main>
+
+    <footer>
+        <p>Weather Dashboard | HTML • CSS • JavaScript • REST API</p>
+    </footer>
+
+    <script src="script.js"></script>
+
+</body>
+</html>
